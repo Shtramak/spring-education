@@ -7,18 +7,18 @@ import java.io.OutputStream;
 import java.io.PrintStream;
 
 import org.junit.AfterClass;
-import org.junit.BeforeClass;
+import org.junit.Before;
 import org.junit.Test;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 
 public class SenatorClayQuoterTest {
-    private static PrintStream originalOut;
+    private static final PrintStream ORIGINAL_OUT = System.out;
+
     private static OutputStream outputStream;
 
-    @BeforeClass
-    public static void setUp() {
-        originalOut = System.out;
+    @Before
+    public void setUp() {
         outputStream = new ByteArrayOutputStream();
         PrintStream printStream = new PrintStream(outputStream);
         System.setOut(printStream);
@@ -26,7 +26,7 @@ public class SenatorClayQuoterTest {
 
     @AfterClass
     public static void tearDown() {
-        System.setOut(originalOut);
+        System.setOut(ORIGINAL_OUT);
     }
 
     @Test
@@ -36,6 +36,8 @@ public class SenatorClayQuoterTest {
         Quoter senatorClayQuoter = context.getBean(Quoter.class);
         senatorClayQuoter.sayQuote();
         String actual = outputStream.toString();
+        System.setOut(ORIGINAL_OUT);
+        System.out.println(actual);
         assertTrue(actual != null);
     }
 }
