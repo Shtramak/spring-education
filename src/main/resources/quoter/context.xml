@@ -7,4 +7,6 @@
         <property name="message" value="Shiiiiiiiet"/>
     </bean>
 
+    <bean class="ua.com.shtramak.borisov.quoter.InjectRandomIntAnnotationBeanPostProcessor"/>
+
 </beans>
