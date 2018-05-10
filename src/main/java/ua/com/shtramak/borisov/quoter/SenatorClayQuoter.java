@@ -2,6 +2,7 @@ package ua.com.shtramak.borisov.quoter;
 
 import javax.annotation.PostConstruct;
 
+@Profiling
 public class SenatorClayQuoter implements Quoter {
     @InjectRandomInt(min = 2, max = 7)
     private int repeat;
@@ -15,7 +16,7 @@ public class SenatorClayQuoter implements Quoter {
     @Override
     public void sayQuote() {
         for (int i = 0; i < repeat; i++) {
-            System.out.println("Message: " + message);
+            System.out.println("Senator Clay say: " + message);
         }
     }
 

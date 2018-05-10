@@ -11,4 +11,6 @@
 
     <bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"/>
 
+    <bean class="ua.com.shtramak.borisov.quoter.ProfilingHandlerBeanPostProcessor"/>
+
 </beans>
