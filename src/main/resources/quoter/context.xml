@@ -18,4 +18,6 @@
 
     <bean class="ua.com.shtramak.borisov.quoter.PostProxyInvokerContextListener"/>
 
+    <bean class="ua.com.shtramak.borisov.quoter.DeprecatedClassAnnotationHandlerBeanFactoryPostProcessor"/>
+
 </beans>

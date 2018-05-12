@@ -25,6 +25,7 @@ public class PostProxyInvokerContextListener implements ApplicationListener<Cont
                 Method[] methods = originalClass.getMethods();
                 for (Method method : methods) {
                     if (method.isAnnotationPresent(PostProxy.class)) {
+                        System.out.println("Phase 3 in Proxy Object");
                         Object contextBean = context.getBean(name);
                         Method contexBeanMethod = contextBean.getClass().getMethod(method.getName(), method.getParameterTypes());
                         contexBeanMethod.invoke(contextBean);
