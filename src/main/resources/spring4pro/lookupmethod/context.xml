@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    
+    <bean class="ua.com.shtramak.spring4pro.lookupmethod.MyHelper" id="helperBean" scope="prototype"/>
+    
+    <bean class="ua.com.shtramak.spring4pro.lookupmethod.StandardWorker" id="standardWorker">
+        <property name="helper" ref="helperBean"/>
+    </bean>
+
+    <bean class="ua.com.shtramak.spring4pro.lookupmethod.PrototypeWorker" id="prototypeWorker">
+        <lookup-method name="getMyHelper" bean="helperBean"/>
+    </bean>
+
+</beans>
