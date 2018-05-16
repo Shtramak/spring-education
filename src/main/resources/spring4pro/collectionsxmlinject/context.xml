@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context.xsd
+http://www.springframework.org/schema/util
+http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <context:annotation-config/>
+    <context:component-scan base-package="ua.com.shtramak.spring4pro.collectionsxmlinject"/>
+
+    <util:properties id="property">
+        <prop key="property-one">1</prop>
+        <prop key="property-two">2</prop>
+    </util:properties>
+
+    <util:map id="map" map-class="java.util.HashMap">
+        <entry key="map-one" value="1"/>
+        <entry key="map-two" value="2"/>
+    </util:map>
+
+    <util:set id="set">
+        <value>set-one</value>
+        <value>set-two</value>
+    </util:set>
+
+    <util:list id="list">
+        <value>1</value>
+        <value>2</value>
+    </util:list>
+
+</beans>

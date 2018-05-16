@@ -1,4 +1,4 @@
-package ua.com.shtramak.springfourpro;
+package ua.com.shtramak.spring4pro.helloworld;
 
 import static org.junit.Assert.assertEquals;
 
@@ -11,7 +11,6 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import ua.com.shtramak.springfourpro.helloworld.MessageRenderer;
 
 public class ConsoleMessageRendererTest {
     private static ApplicationContext context;
@@ -21,7 +20,7 @@ public class ConsoleMessageRendererTest {
 
     @BeforeClass
     public static void setup() {
-        context = new ClassPathXmlApplicationContext("/springfourpro/context.xml");
+        context = new ClassPathXmlApplicationContext("/spring4pro/helloworld/context.xml");
         original = System.out;
     }
 

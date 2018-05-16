@@ -1,4 +1,4 @@
-package ua.com.shtramak.springfourpro.helloworld;
+package ua.com.shtramak.spring4pro.helloworld;
 
 public class ConsoleMessageRenderer implements MessageRenderer {
     private MessageProvider messageProvider;
