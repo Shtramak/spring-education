@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean class="ua.com.shtramak.spring4pro.methodreplacer.ByeClass" id="byeClass"/>
+
+    <bean class="ua.com.shtramak.spring4pro.methodreplacer.GreetingsClass" id="greetingsClass">
+        <replaced-method name="sayHallo" replacer="byeClass">
+            <arg-type>String</arg-type>
+        </replaced-method>
+    </bean>
+</beans>
